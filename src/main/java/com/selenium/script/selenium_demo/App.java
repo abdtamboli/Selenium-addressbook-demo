@@ -19,11 +19,17 @@ public class App
         //System.out.println( "Hello World!" );
 	
 		System.setProperty("webdriver.chrome.driver","/Users/shubham/Documents/Softwares/chrome-driver/chromedriver");
+		//System.setProperty("webdriver.chrome.driver","/home/ubuntu/chromedriver");
+		
+		
+		
 		ChromeOptions chromeOptions = new ChromeOptions();
+		//chromeOptions.addArguments("--headless");
 		WebDriver driver = new ChromeDriver(chromeOptions);
 		
+		System.out.println("Welcome to the Selenium Scripts - It starts executing here");
 		//automation
-		driver.get("http://18.191.95.70:8888/addressbook/");
+		driver.get("http://18.206.169.106:8081/addressbook/");
 		
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
@@ -33,7 +39,7 @@ public class App
 		driver.findElement(By.id("gwt-uid-7")).sendKeys("Singh");
 		driver.findElement(By.id("gwt-uid-9")).sendKeys("9999999999");
 		driver.findElement(By.id("gwt-uid-11")).sendKeys("Shubham@gmail.com");
-		driver.findElement(By.id("gwt-uid-13")).sendKeys("24/06/2022,");
+		driver.findElement(By.id("gwt-uid-13")).sendKeys("24/06/2022");
 		Thread.sleep(2000);
 		//click on the save button
 		driver.findElement(By.className("v-button-primary")).click();
@@ -41,6 +47,7 @@ public class App
 		Thread.sleep(2000);
 		
 		driver.quit();
+		System.out.println("Script executed successfully");
 		
     }
 }
